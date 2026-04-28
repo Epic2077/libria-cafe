@@ -66,6 +66,7 @@ export interface Translations {
   menuPageTitle: string;
   menuPageSubtitle: string;
   popular: string;
+  developerSpecial: string;
   // About page
   aboutHeroTitle: string;
   aboutHeroSubtitle: string;
@@ -147,6 +148,7 @@ const translations: Record<Language, Translations> = {
     menuPageSubtitle:
       "با دقت آماده شده، با نیت درست انتخاب شده. از نوشیدنی‌های دست‌پخت و خوراکی‌های سالم ما لذت ببرید.",
     popular: "محبوب",
+    developerSpecial: "منتخب اشکان",
     // About page
     aboutHeroTitle: "داستان ما",
     aboutHeroSubtitle: "پرورش آگاهی، یک فنجان در هر بار.",
@@ -234,6 +236,7 @@ const translations: Record<Language, Translations> = {
     menuPageSubtitle:
       "Crafted with care, sourced with intention. Enjoy our selection of artisan beverages and wholesome bites.",
     popular: "Popular",
+    developerSpecial: "Ashkan’s Pick",
     // About page
     aboutHeroTitle: "Our Story",
     aboutHeroSubtitle: "Cultivating mindfulness, one cup at a time.",
