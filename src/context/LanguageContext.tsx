@@ -62,6 +62,27 @@ export interface Translations {
   testimonialQuote: string;
   testimonialAuthor: string;
   testimonialRole: string;
+  // Menu page
+  menuPageTitle: string;
+  menuPageSubtitle: string;
+  popular: string;
+  // About page
+  aboutHeroTitle: string;
+  aboutHeroSubtitle: string;
+  aboutSection1Title: string;
+  aboutSection1Para1: string;
+  aboutSection1Para2: string;
+  aboutSection2Title: string;
+  aboutSection2Para1: string;
+  aboutSection2Para2: string;
+  aboutValue1Title: string;
+  aboutValue1Desc: string;
+  aboutValue2Title: string;
+  aboutValue2Desc: string;
+  aboutValue3Title: string;
+  aboutValue3Desc: string;
+  contactPageTitle: string;
+  contactPageDescription: string;
 }
 
 const translations: Record<Language, Translations> = {
@@ -80,7 +101,7 @@ const translations: Record<Language, Translations> = {
     sunday: "یکشنبه",
     address: "خیابان افشار ۱۲۳، تهران",
     phone: "(۰۲۱) ۱۲۳-۴۵۶۷",
-    email: "hello@luminacafe.com",
+    email: "hello@Libriacafe.com",
     privacyPolicy: "سیاست حریم خصوصی",
     termsOfService: "شرایط استفاده",
     allRightsReserved: "تمامی حقوق محفوظ است.",
@@ -121,6 +142,35 @@ const translations: Record<Language, Translations> = {
       "«ترکیب بی‌نظیری از طراحی مینیمالیستی و فضای گرم. مکان همیشگی من برای خواندن صبح‌های یکشنبه.»",
     testimonialAuthor: "مایکل چن",
     testimonialRole: "ساکن محلی",
+    // Menu page
+    menuPageTitle: "منوی ما",
+    menuPageSubtitle:
+      "با دقت آماده شده، با نیت درست انتخاب شده. از نوشیدنی‌های دست‌پخت و خوراکی‌های سالم ما لذت ببرید.",
+    popular: "محبوب",
+    // About page
+    aboutHeroTitle: "داستان ما",
+    aboutHeroSubtitle: "پرورش آگاهی، یک فنجان در هر بار.",
+    aboutSection1Title: "آغاز لیبریا",
+    aboutSection1Para1:
+      "لیبریا از یک ایده ساده بین دو دوست آغاز شد که در آیین قهوه صبحگاهی آرامش می‌یافتند. در شهری که هرگز از حرکت باز نمی‌ایستد، می‌خواستیم پناهگاهی بسازیم؛ جایی که زمان کند می‌شود و توجه به کیفیت، جامعه و لحظه حال معطوف می‌گردد.",
+    aboutSection1Para2:
+      "نام لیبریا، نور طبیعی را که فضای ما را پر می‌کند و شفافیتی را که امیدواریم یک فنجان قهوه خوب به روزتان هدیه دهد بازتاب می‌دهد. ماه‌ها گذشت تا گوشه‌ای آفتابی در محله پیدا کنیم تا این رؤیا را زنده کنیم.",
+    aboutSection2Title: "فلسفه ما",
+    aboutSection2Para1:
+      "ما بر این باوریم که قهوه خوب نباید به بهای آسیب به زمین یا کشاورزانش تمام شود. به همین دلیل تنها با رست‌کارهای مستقلی همکاری می‌کنیم که تجارت مستقیم را رعایت می‌کنند و دستمزد عادلانه و روش‌های کشاورزی پایدار را تضمین می‌نمایند.",
+    aboutSection2Para2:
+      "هر جزئیاتی در لیبریا، از ماگ‌های سرامیکی دست‌ساز گرفته تا میزهای چوب بازیافتی و گیاهان فراوان داخلی، برای ارتباط شما با طبیعت انتخاب شده است. شما را دعوت می‌کنیم بنشینید، بنوشید و کمی بمانید.",
+    aboutValue1Title: "اشتیاق",
+    aboutValue1Desc: "هر فنجان با توجه کامل و دقت در هر مرحله آماده می‌شود.",
+    aboutValue2Title: "پایداری",
+    aboutValue2Desc: "مواد اولیه ارگانیک و شراکت با کشاورزان مستقل محلی.",
+    aboutValue3Title: "جامعه",
+    aboutValue3Desc:
+      "ساختن فضایی که همه در آن احساس خوشایندی و تعلق داشته باشند.",
+    //Contact
+    contactPageTitle: "تماس با ما",
+    contactPageDescription:
+      "سوالی دارید، بازخوردی می‌خواهید یا می‌خواهید یک رویداد برگزار کنید؟ ما دوست داریم از شما بشنویم.",
   },
   en: {
     home: "Home",
@@ -137,7 +187,7 @@ const translations: Record<Language, Translations> = {
     sunday: "Sunday",
     address: "123 Maple Street, Portland, OR 97204",
     phone: "(555) 123-4567",
-    email: "hello@luminacafe.com",
+    email: "hello@Libriacafe.com",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     allRightsReserved: "All rights reserved.",
@@ -179,6 +229,38 @@ const translations: Record<Language, Translations> = {
       '"A perfect blend of minimalist design and warm atmosphere. My go-to spot for Sunday morning reading."',
     testimonialAuthor: "Michael Chen",
     testimonialRole: "Local Resident",
+    // Menu page
+    menuPageTitle: "Our Menu",
+    menuPageSubtitle:
+      "Crafted with care, sourced with intention. Enjoy our selection of artisan beverages and wholesome bites.",
+    popular: "Popular",
+    // About page
+    aboutHeroTitle: "Our Story",
+    aboutHeroSubtitle: "Cultivating mindfulness, one cup at a time.",
+    aboutSection1Title: "The Beginnings of Libria",
+    aboutSection1Para1:
+      "Libria started as a simple idea between two friends who found peace in the ritual of morning coffee. In a city that never stops moving, we wanted to create a sanctuary—a place where time slows down, and the focus shifts to quality, community, and the present moment.",
+    aboutSection1Para2:
+      "Our name, Libria, reflects the natural light that fills our space and the clarity we hope a good cup of coffee brings to your day. We spent months finding the perfect sunlit corner in the neighborhood to bring this vision to life.",
+    aboutSection2Title: "Our Philosophy",
+    aboutSection2Para1:
+      "We believe that good coffee shouldn't come at the expense of the earth or the people who farm it. That's why we partner exclusively with independent roasters who practice direct trade, ensuring fair wages and sustainable farming methods.",
+    aboutSection2Para2:
+      "Every detail in Libria—from the handcrafted ceramic mugs to the reclaimed wood tables and abundant indoor plants—has been chosen to ground you in nature. We invite you to sit, sip, and stay awhile.",
+    aboutValue1Title: "Passion",
+    aboutValue1Desc:
+      "Every cup is prepared with full attention and care at every step.",
+    aboutValue2Title: "Sustainability",
+    aboutValue2Desc:
+      "Organic ingredients and partnerships with independent local farmers.",
+    aboutValue3Title: "Community",
+    aboutValue3Desc:
+      "Building a space where everyone feels welcome and at home.",
+
+    //Contact
+    contactPageTitle: "Get in Touch",
+    contactPageDescription:
+      "Have a question, feedback, or want to host an event? We'd love to hear from you.",
   },
 };
 

@@ -100,7 +100,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-[#4A3B32] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#B5A89E]">
           <p>
-            &copy; {new Date().getFullYear()} Lumina Café. {t.allRightsReserved}
+            &copy; {new Date().getFullYear()} Libria Café. {t.allRightsReserved}
           </p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-[#FDFBF7] transition-colors">
