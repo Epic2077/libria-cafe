@@ -11,6 +11,7 @@ interface HeaderProps {
   setActiveCategory: (category: MenuCategoryKey) => void;
   categories: MenuCategory[];
   t: Translations;
+  itemsCount: number;
 }
 
 const Header = ({
@@ -18,16 +19,23 @@ const Header = ({
   setActiveCategory,
   categories,
   t,
+  itemsCount,
 }: HeaderProps) => {
-
   return (
     <>
-      {/* Header */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-12">
+        <motion.span
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="inline-block text-xs tracking-[0.3em] uppercase text-[#8A9A86] font-semibold mb-4"
+        >
+          — {t.menu}
+        </motion.span>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="font-['Playfair_Display',serif] text-5xl md:text-6xl font-bold text-[#3E3129] mb-6"
+          transition={{ delay: 0.05 }}
+          className="font-display text-5xl md:text-7xl font-bold text-[#3E3129] mb-6 leading-tight tracking-tight"
         >
           {t.menuPageTitle}
         </motion.h1>
@@ -39,24 +47,44 @@ const Header = ({
         >
           {t.menuPageSubtitle}
         </motion.p>
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="mx-auto mt-8 w-16 h-px bg-[#E8A38B]"
+        />
       </div>
 
-      {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-3 mb-16">
-        {categories.map((category) => (
-          <button
-            key={category.key}
-            onClick={() => setActiveCategory(category.key)}
-            className={clsx(
-              "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300",
-              activeCategory === category.key
-                ? "bg-[#3E3129] text-[#FDFBF7] shadow-md"
-                : "bg-white text-[#7D6B5D] border border-[#EAE2D6] hover:border-[#8A9A86] hover:text-[#3E3129]",
-            )}
-          >
-            {category.label}
-          </button>
-        ))}
+      {/* Category Filter — sticky pill rail */}
+      <div className="sticky top-16 z-30 -mx-4 sm:mx-0 mb-12 backdrop-blur-md bg-[#FDFBF7]/85 border-y sm:border border-[#EAE2D6] sm:rounded-2xl px-4 sm:px-3 py-3">
+        <div className="flex items-center gap-3 overflow-x-auto sm:flex-wrap sm:justify-center scrollbar-hide -mx-1 px-1">
+          {categories.map((category) => {
+            const isActive = activeCategory === category.key;
+            return (
+              <button
+                key={category.key}
+                onClick={() => setActiveCategory(category.key)}
+                className={clsx(
+                  "shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap",
+                  isActive
+                    ? "bg-[#3E3129] text-[#FDFBF7] shadow-[0_8px_20px_-8px_rgba(62,49,41,0.4)]"
+                    : "bg-white/70 text-[#7D6B5D] border border-[#EAE2D6] hover:border-[#8A9A86] hover:text-[#3E3129]"
+                )}
+              >
+                {category.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="flex justify-center mb-10">
+        <p className="text-xs text-[#7D6B5D] tracking-widest uppercase">
+          <span className="text-[#3E3129] font-semibold tabular-nums-fa">
+            {itemsCount}
+          </span>{" "}
+          {t.menuItemsCount}
+        </p>
       </div>
     </>
   );

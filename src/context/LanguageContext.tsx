@@ -84,6 +84,71 @@ export interface Translations {
   aboutValue3Desc: string;
   contactPageTitle: string;
   contactPageDescription: string;
+  // Gallery page
+  galleryHeroTag: string;
+  galleryTitle: string;
+  galleryDesc: string;
+  galleryAllFilter: string;
+  galleryInteriorFilter: string;
+  galleryDrinksFilter: string;
+  galleryFoodFilter: string;
+  galleryMomentsFilter: string;
+  galleryCtaTitle: string;
+  galleryCtaDesc: string;
+  galleryCtaButton: string;
+  // Contact extras
+  contactInfoTitle: string;
+  contactFormTitle: string;
+  contactFormDesc: string;
+  formName: string;
+  formEmail: string;
+  formSubject: string;
+  formMessage: string;
+  formSubjectGeneral: string;
+  formSubjectEvent: string;
+  formSubjectPress: string;
+  formSubjectFeedback: string;
+  formSubmit: string;
+  formSubmitting: string;
+  formSuccess: string;
+  contactDirections: string;
+  contactCallUs: string;
+  contactWriteUs: string;
+  contactVisitUs: string;
+  // About extras
+  aboutStatYears: string;
+  aboutStatYearsLabel: string;
+  aboutStatBeans: string;
+  aboutStatBeansLabel: string;
+  aboutStatGuests: string;
+  aboutStatGuestsLabel: string;
+  aboutValuesTitle: string;
+  aboutValuesSubtitle: string;
+  aboutTimelineTitle: string;
+  aboutTimeline1Year: string;
+  aboutTimeline1Title: string;
+  aboutTimeline1Desc: string;
+  aboutTimeline2Year: string;
+  aboutTimeline2Title: string;
+  aboutTimeline2Desc: string;
+  aboutTimeline3Year: string;
+  aboutTimeline3Title: string;
+  aboutTimeline3Desc: string;
+  aboutTimeline4Year: string;
+  aboutTimeline4Title: string;
+  aboutTimeline4Desc: string;
+  // Newsletter
+  newsletterTitle: string;
+  newsletterDesc: string;
+  newsletterPlaceholder: string;
+  newsletterButton: string;
+  // Hero scroll cue
+  scrollCue: string;
+  // Menu extras
+  menuItemsCount: string;
+  menuNoResults: string;
+  // Misc
+  followUs: string;
 }
 
 const translations: Record<Language, Translations> = {
@@ -113,14 +178,13 @@ const translations: Record<Language, Translations> = {
     sundayHours: "۸:۰۰ صبح - ۵:۰۰ عصر",
     // Hero
     heroTag: "تأسیس ۲۰۲۴",
-    heroHeadline1: "لحظات آگاهانه،",
-    heroHeadline2: "دم‌نوش‌های دست‌پخت.",
-    heroDesc:
-      "پناهگاهی آرام که مینیمالیسم اسکاندیناوی را با گرمای طبیعت درهم می‌آمیزد. قهوه‌های دقیق و متفکرانه را در فضایی پر از نور آفتاب بچشید.",
+    heroHeadline1: "بیا!! کجا؟",
+    heroHeadline2: "لیبریا",
+    heroDesc: "اینجا قهوه فقط شروع ماجراست؛ ما برایت حالِ خوب دم می‌کنیم",
     viewMenu: "مشاهده منو",
     ourStory: "داستان ما",
     // Features
-    feature1Name: "قهوه دست‌پخت",
+    feature1Name: "قهوه با کیفیت",
     feature1Desc: "دانه‌های با منشأ اخلاقی، بو داده تا حد کمال.",
     feature2Name: "مواد ارگانیک",
     feature2Desc: "تنها از بهترین مواد طبیعی استفاده می‌کنیم.",
@@ -173,6 +237,75 @@ const translations: Record<Language, Translations> = {
     contactPageTitle: "تماس با ما",
     contactPageDescription:
       "سوالی دارید، بازخوردی می‌خواهید یا می‌خواهید یک رویداد برگزار کنید؟ ما دوست داریم از شما بشنویم.",
+    // Gallery
+    galleryHeroTag: "گالری",
+    galleryTitle: "لحظه‌های لیبریا",
+    galleryDesc:
+      "نگاهی به فضا، نوشیدنی‌ها و آدم‌هایی که لیبریا را زنده نگه می‌دارند.",
+    galleryAllFilter: "همه",
+    galleryInteriorFilter: "فضا",
+    galleryDrinksFilter: "نوشیدنی",
+    galleryFoodFilter: "غذا",
+    galleryMomentsFilter: "لحظه‌ها",
+    galleryCtaTitle: "حضوری بیایید",
+    galleryCtaDesc: "یک گوشهٔ آفتابی برای شما آماده است. منتظرتان هستیم.",
+    galleryCtaButton: "مشاهدهٔ منو",
+    // Contact extras
+    contactInfoTitle: "اطلاعات تماس",
+    contactFormTitle: "برای ما پیام بفرستید",
+    contactFormDesc: "تا ۲۴ ساعت پاسخ می‌دهیم. قول می‌دهیم.",
+    formName: "نام شما",
+    formEmail: "ایمیل",
+    formSubject: "موضوع",
+    formMessage: "پیام شما",
+    formSubjectGeneral: "سؤال عمومی",
+    formSubjectEvent: "رزرو رویداد",
+    formSubjectPress: "همکاری و رسانه",
+    formSubjectFeedback: "بازخورد",
+    formSubmit: "ارسال پیام",
+    formSubmitting: "در حال ارسال…",
+    formSuccess: "پیام شما دریافت شد. به زودی با شما در تماس خواهیم بود.",
+    contactDirections: "مسیریابی",
+    contactCallUs: "تماس بگیرید",
+    contactWriteUs: "برای ما بنویسید",
+    contactVisitUs: "به ما سر بزنید",
+    // About extras
+    aboutStatYears: "۲",
+    aboutStatYearsLabel: "سال میزبانی",
+    aboutStatBeans: "۱۲+",
+    aboutStatBeansLabel: "نوع دانه قهوه",
+    aboutStatGuests: "۸ هزار+",
+    aboutStatGuestsLabel: "میهمان خوشحال",
+    aboutValuesTitle: "ارزش‌های ما",
+    aboutValuesSubtitle: "سه اصلی که هر فنجان لیبریا را شکل می‌دهند.",
+    aboutTimelineTitle: "مسیر ما",
+    aboutTimeline1Year: "۱۴۰۲",
+    aboutTimeline1Title: "ایده در یک کافه",
+    aboutTimeline1Desc: "همه‌چیز از یک گفت‌وگوی صبحانه میان دو دوست شروع شد.",
+    aboutTimeline2Year: "۱۴۰۲",
+    aboutTimeline2Title: "پیدا کردن خانه",
+    aboutTimeline2Desc:
+      "گوشه‌ای آفتابی در محله، با پنجره‌های بلند و سکوت نسبی.",
+    aboutTimeline3Year: "۱۴۰۳",
+    aboutTimeline3Title: "افتتاح",
+    aboutTimeline3Desc:
+      "اولین فنجان را به دوستان نزدیک سرو کردیم؛ همان شب پر شد.",
+    aboutTimeline4Year: "۱۴۰۴",
+    aboutTimeline4Title: "رستِ اختصاصی",
+    aboutTimeline4Desc: "همکاری با رست‌کارهای مستقل برای دانه‌های منحصربه‌فرد.",
+    // Newsletter
+    newsletterTitle: "از ما بشنوید",
+    newsletterDesc:
+      "نوشیدنی‌های فصلی، رویدادها و یادداشت‌های آرام — یک ایمیل در ماه.",
+    newsletterPlaceholder: "ایمیل شما",
+    newsletterButton: "عضویت",
+    // Hero scroll cue
+    scrollCue: "اسکرول کنید",
+    // Menu extras
+    menuItemsCount: "آیتم",
+    menuNoResults: "موردی برای نمایش نیست.",
+    // Misc
+    followUs: "ما را دنبال کنید",
   },
   en: {
     home: "Home",
@@ -264,6 +397,77 @@ const translations: Record<Language, Translations> = {
     contactPageTitle: "Get in Touch",
     contactPageDescription:
       "Have a question, feedback, or want to host an event? We'd love to hear from you.",
+    // Gallery
+    galleryHeroTag: "Gallery",
+    galleryTitle: "Moments at Libria",
+    galleryDesc:
+      "A peek into the space, the drinks, and the people who make Libria what it is.",
+    galleryAllFilter: "All",
+    galleryInteriorFilter: "Space",
+    galleryDrinksFilter: "Drinks",
+    galleryFoodFilter: "Food",
+    galleryMomentsFilter: "Moments",
+    galleryCtaTitle: "Come visit us",
+    galleryCtaDesc: "A sunlit corner is waiting. We'd love to make you a cup.",
+    galleryCtaButton: "View the menu",
+    // Contact extras
+    contactInfoTitle: "Reach us",
+    contactFormTitle: "Send us a message",
+    contactFormDesc: "We reply within 24 hours. Promise.",
+    formName: "Your name",
+    formEmail: "Email",
+    formSubject: "Subject",
+    formMessage: "Your message",
+    formSubjectGeneral: "General inquiry",
+    formSubjectEvent: "Event booking",
+    formSubjectPress: "Press & partnerships",
+    formSubjectFeedback: "Feedback",
+    formSubmit: "Send message",
+    formSubmitting: "Sending…",
+    formSuccess: "Thanks — your message landed. We'll be in touch shortly.",
+    contactDirections: "Get directions",
+    contactCallUs: "Call us",
+    contactWriteUs: "Write to us",
+    contactVisitUs: "Visit us",
+    // About extras
+    aboutStatYears: "2",
+    aboutStatYearsLabel: "Years of pouring",
+    aboutStatBeans: "12+",
+    aboutStatBeansLabel: "Single-origin beans",
+    aboutStatGuests: "8k+",
+    aboutStatGuestsLabel: "Happy regulars",
+    aboutValuesTitle: "What we stand for",
+    aboutValuesSubtitle: "Three quiet principles behind every cup we pour.",
+    aboutTimelineTitle: "Our journey",
+    aboutTimeline1Year: "2023",
+    aboutTimeline1Title: "An idea over coffee",
+    aboutTimeline1Desc:
+      "Two friends, a long breakfast, and a sketched-out dream of a quiet café.",
+    aboutTimeline2Year: "2023",
+    aboutTimeline2Title: "Finding a home",
+    aboutTimeline2Desc:
+      "A sunlit corner with tall windows and a hush you could almost hear.",
+    aboutTimeline3Year: "2024",
+    aboutTimeline3Title: "Opening day",
+    aboutTimeline3Desc:
+      "We poured the first cup for friends. By dusk, every chair was warm.",
+    aboutTimeline4Year: "2025",
+    aboutTimeline4Title: "Our own roast",
+    aboutTimeline4Desc:
+      "A small partnership with independent roasters for beans we believe in.",
+    // Newsletter
+    newsletterTitle: "Quiet notes, in your inbox",
+    newsletterDesc:
+      "Seasonal drinks, gentle events, and slow reading — once a month, never more.",
+    newsletterPlaceholder: "your@email.com",
+    newsletterButton: "Subscribe",
+    // Hero scroll cue
+    scrollCue: "Scroll",
+    // Menu extras
+    menuItemsCount: "items",
+    menuNoResults: "Nothing here yet — try another category.",
+    // Misc
+    followUs: "Follow along",
   },
 };
 

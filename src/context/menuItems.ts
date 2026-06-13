@@ -1,19 +1,23 @@
 import type { Language } from "./LanguageContext";
 
-export type MenuCategoryKey =
-  | "all"
-  | "hotCoffee"
-  | "coldCoffee"
-  | "brewedCoffee"
-  | "coldBrew"
-  | "warmDrinks"
-  | "hotDrinks"
-  | "mocktails"
-  | "smoothies"
-  | "shakes"
-  | "cakesSweets"
-  | "snacks"
-  | "food";
+export const baseCategoryKeys = [
+  "all",
+  "hotCoffee",
+  "coldCoffee",
+  "brewedCoffee",
+  "coldBrew",
+  "warmDrinks",
+  "hotDrinks",
+  "mocktails",
+  "smoothies",
+  "shakes",
+  "cakesSweets",
+  "snacks",
+  "food",
+] as const;
+
+export type BaseMenuCategoryKey = (typeof baseCategoryKeys)[number];
+export type MenuCategoryKey = BaseMenuCategoryKey | (string & {});
 
 export interface MenuItem {
   id: number;
@@ -1070,21 +1074,7 @@ const categoryLabels: Record<Language, Record<MenuCategoryKey, string>> = {
   },
 };
 
-const categoryOrder: MenuCategoryKey[] = [
-  "all",
-  "hotCoffee",
-  "coldCoffee",
-  "brewedCoffee",
-  "coldBrew",
-  "warmDrinks",
-  "hotDrinks",
-  "mocktails",
-  "smoothies",
-  "shakes",
-  "cakesSweets",
-  "snacks",
-  "food",
-];
+const categoryOrder: MenuCategoryKey[] = [...baseCategoryKeys];
 
 export function getMenuItems(language: Language): MenuItem[] {
   return menuItemsByLanguage[language];
@@ -1102,3 +1092,7 @@ export const menuItems = menuItemsByLanguage.en;
 export const menuCategories = categoryOrder.map(
   (key) => categoryLabels.en[key],
 );
+
+export const defaultMenuItemsByLanguage = menuItemsByLanguage;
+export const defaultCategoryLabels = categoryLabels;
+export const defaultCategoryOrder = categoryOrder;
