@@ -32,15 +32,8 @@ export async function proxy(request: NextRequest) {
   if (pathname.startsWith("/dashboard")) {
     const session = await auth0.getSession(request);
 
-    // Not logged in → send to the Auth0 login page, then back to where they were.
-    if (!session) {
-      const loginUrl = new URL("/auth/login", request.url);
-      loginUrl.searchParams.set("returnTo", pathname);
-      return NextResponse.redirect(loginUrl);
-    }
-
-    // Logged in but not an allowed admin → bounce to the no-access page.
-    if (!isAdmin(session.user?.email as string | undefined)) {
+    // Not logged in, or logged in but not an allowed admin → no-access page.
+    if (!session || !isAdmin(session.user?.email as string | undefined)) {
       return NextResponse.redirect(new URL("/no-access", request.url));
     }
   }
