@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Coffee, Menu as MenuIcon, X } from "lucide-react";
+import { Coffee, LogOut, Menu as MenuIcon, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { useUser } from "@auth0/nextjs-auth0";
 
 import { useLanguage } from "@/context/LanguageContext";
 import { navLinks } from "@/context/navLinks";
@@ -15,6 +16,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const { language, t, toggleLanguage } = useLanguage();
   const pathname = usePathname();
+  const { user } = useUser();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -96,6 +98,25 @@ export default function Navbar() {
             >
               {language === "fa" ? "EN" : "فا"}
             </button>
+
+            {/* Admin session indicator + sign out (logout route lives outside the router → plain <a>) */}
+            {user && (
+              <div className="ms-2 flex items-center gap-2 ps-2 border-s border-[#EAE2D6]">
+                <span
+                  className="hidden lg:flex items-center justify-center w-8 h-8 rounded-full bg-[#8A9A86] text-white text-xs font-semibold uppercase"
+                  title={user.email ?? user.name ?? "Admin"}
+                >
+                  {(user.email ?? user.name ?? "A").charAt(0)}
+                </span>
+                <a
+                  href="/auth/logout"
+                  className="flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-full border border-[#EAE2D6] text-[#7D6B5D] hover:bg-[#E8A38B]/15 hover:text-[#C56C50] transition-colors"
+                >
+                  <LogOut size={14} strokeWidth={2} />
+                  Sign out
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Mobile: lang switcher + hamburger */}
@@ -163,6 +184,25 @@ export default function Navbar() {
                   {t.orderNow}
                 </Link>
               </div>
+
+              {/* Admin session row */}
+              {user && (
+                <div className="mt-3 pt-3 border-t border-[#EAE2D6]">
+                  <p className="px-4 pb-2 text-xs text-[#7D6B5D]">
+                    Signed in as{" "}
+                    <span className="font-semibold text-[#3E3129]">
+                      {user.email ?? user.name}
+                    </span>
+                  </p>
+                  <a
+                    href="/auth/logout"
+                    className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-xl text-base font-medium border border-[#EAE2D6] text-[#C56C50] hover:bg-[#E8A38B]/15 transition-colors"
+                  >
+                    <LogOut size={18} strokeWidth={2} />
+                    Sign out
+                  </a>
+                </div>
+              )}
             </div>
           </motion.div>
         )}
