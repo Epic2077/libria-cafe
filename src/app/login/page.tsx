@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { auth0 } from "@/lib/auth0";
+
+export const metadata: Metadata = {
+  title: "Admin sign in",
+  robots: { index: false, follow: false },
+};
 
 // Admin-only login. There is no sign-up — accounts are provisioned manually in
 // the Auth0 dashboard. Sign-ups should also be disabled on the Auth0 database

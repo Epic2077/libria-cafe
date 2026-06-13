@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { Coffee, MapPin, Clock, Phone, Mail, Send } from "lucide-react";
 import { useState } from "react";
+import { Code2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { navLinks } from "@/context/navLinks";
 import type { Translations } from "@/context/LanguageContext";
+import { developer } from "@/lib/site";
 import { BsInstagram } from "react-icons/bs";
 import { FaXTwitter, FaFacebookF } from "react-icons/fa6";
 
@@ -176,12 +178,28 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} Libria Café. {t.allRightsReserved}
           </p>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
             <a href="#" className="hover:text-[#FDFBF7] transition-colors">
               {t.privacyPolicy}
             </a>
             <a href="#" className="hover:text-[#FDFBF7] transition-colors">
               {t.termsOfService}
+            </a>
+
+            {/* Developer badge: hover reveals the name, click opens the portfolio */}
+            <a
+              href={developer.portfolio}
+              target="_blank"
+              rel="noopener noreferrer author"
+              title={developer.name}
+              aria-label={`Developed by ${developer.name} — view portfolio`}
+              className="group inline-flex items-center gap-2 rounded-full border border-[#4A3B32] bg-[#4A3B32]/40 px-3 py-1.5 text-[#B5A89E] transition-all hover:border-[#8A9A86] hover:bg-[#8A9A86]/20 hover:text-[#FDFBF7]"
+            >
+              <Code2 size={14} className="text-[#8A9A86]" />
+              <span className="text-xs font-medium">Developer</span>
+              <span className="max-w-0 overflow-hidden whitespace-nowrap text-xs font-semibold text-[#E8A38B] opacity-0 transition-all duration-300 group-hover:max-w-35 group-hover:opacity-100">
+                {developer.name}
+              </span>
             </a>
           </div>
         </div>

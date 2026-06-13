@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
+
 import { auth0 } from "@/lib/auth0";
+
+export const metadata: Metadata = {
+  title: "Access denied",
+  robots: { index: false, follow: false },
+};
 
 // Shown when a user is authenticated but is NOT on the admin allow-list.
 export default async function NoAccessPage() {
