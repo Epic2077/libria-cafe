@@ -24,7 +24,7 @@ export default function NotFound() {
           </p>
 
           <p
-            className="mt-6 max-w-2xl text-sm leading-relaxed text-[#746355] sm:text-base"
+            className="mt-6 block max-w-2xl text-sm leading-relaxed text-[#746355] sm:text-base"
             dir="ltr"
           >
             The page you are looking for does not exist, has moved, or the URL
@@ -64,7 +64,7 @@ export default function NotFound() {
 
           <div className="mt-8 rounded-2xl border border-[#ECE3D8] bg-[#FDFBF7]/85 px-4 py-3 text-sm text-[#6D5C50] sm:text-base">
             اگر نشانی را دستی وارد کرده اید، یک بار املای آن را بررسی کنید.
-            <span className="ms-1 inline text-[#8B7668]" dir="ltr">
+            <span className="ms-1  inline text-[#8B7668]" dir="ltr">
               If you typed the URL manually, double-check the spelling.
             </span>
           </div>
