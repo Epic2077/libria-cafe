@@ -77,7 +77,11 @@ export default function Navbar() {
                     <motion.span
                       layoutId="navIndicator"
                       className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-[#E8A38B]"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
                     />
                   )}
                 </Link>
@@ -102,6 +106,12 @@ export default function Navbar() {
             {/* Admin session indicator + sign out (logout route lives outside the router → plain <a>) */}
             {user && (
               <div className="ms-2 flex items-center gap-2 ps-2 border-s border-[#EAE2D6]">
+                <Link
+                  href="/dashboard/menu"
+                  className="text-sm font-medium text-[#7D6B5D] hover:text-[#3E3129] transition-colors"
+                >
+                  Dashboard
+                </Link>
                 <span
                   className="hidden lg:flex items-center justify-center w-8 h-8 rounded-full bg-[#8A9A86] text-white text-xs font-semibold uppercase"
                   title={user.email ?? user.name ?? "Admin"}
@@ -188,6 +198,12 @@ export default function Navbar() {
               {/* Admin session row */}
               {user && (
                 <div className="mt-3 pt-3 border-t border-[#EAE2D6]">
+                  <Link
+                    href="/dashboard/menu"
+                    className="block text-sm font-medium text-center my-2 border-2 border-[#EAE2D6] rounded-xl bg-accent text-[#7D6B5D] hover:text-[#3E3129] transition-colors"
+                  >
+                    Dashboard
+                  </Link>
                   <p className="px-4 pb-2 text-xs text-[#7D6B5D]">
                     Signed in as{" "}
                     <span className="font-semibold text-[#3E3129]">
